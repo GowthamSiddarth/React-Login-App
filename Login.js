@@ -2,10 +2,27 @@ import React from 'react';
 
 class Login extends React.Component {
     render() {
-        return(
+        return (
             <div>
-                Hello
+                <Form />
             </div>
+        );
+    }
+}
+
+class Form extends React.Component {
+    render() {
+        return (
+            <form >
+                <label for="username">
+                    Username
+                    <input type="text" id="username" />
+                </label>
+                <label for="password">
+                    Password
+                    <input type="text" id="username" />
+                </label>
+            </form>
         );
     }
 }
