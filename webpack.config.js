@@ -1,9 +1,9 @@
-import resolve from 'path';
+var path = require('path');
 
 var config = {
     entry: './main.js',
     output: {
-        path: resolve(__dirname),
+        path: path.resolve(__dirname),
         filename: 'index.js',
     },
     devServer: {
