@@ -64,7 +64,10 @@ class LoginForm extends React.Component {
                 </FormGroup>
                 <FormGroup controlId="submit">
                     <Col smOffset={4} sm={8}>
-                        <Button type="submit" onSubmit={this.handleSubmit}>Sign In</Button>
+                        <Button 
+                            type="submit" 
+                            disabled={!this.validateForm()}
+                            onSubmit={this.handleSubmit}>Sign In</Button>
                     </Col>
                 </FormGroup>
             </Form>
