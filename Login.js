@@ -43,7 +43,7 @@ class LoginForm extends React.Component {
                     <Col componentClass={ControlLabel} sm={4}>
                         Username
                     </Col>
-                    <Col componentClass={ControlLabel} sm={4}>
+                    <Col componentClass={ControlLabel} sm={8}>
                         <FormControl 
                             type="text" 
                             value={this.state.username} 
@@ -55,7 +55,7 @@ class LoginForm extends React.Component {
                     <Col componentClass={ControlLabel} sm={4}>
                         Password
                     </Col>
-                    <Col componentClass={ControlLabel} sm={4}>
+                    <Col componentClass={ControlLabel} sm={8}>
                         <FormControl 
                             type="password" 
                             value={this.state.password} 
