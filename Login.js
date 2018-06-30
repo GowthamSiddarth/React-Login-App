@@ -1,10 +1,10 @@
 import React from 'react';
-import { FormGroup, ControlLabel, FormControl} from 'react-bootstrap';
+import { Form, FormGroup, ControlLabel, FormControl, Col } from 'react-bootstrap';
 class Login extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="loginForm">
                 <LoginForm />
             </div>
         );
@@ -35,18 +35,31 @@ class LoginForm extends React.Component {
 
     render() {
         return (
-            <div className="loginForm">
-                <form onSubmit={this.handleSubmit}>
-                    <FormGroup controlId="username">
-                        <ControlLabel>Username</ControlLabel>
-                        <FormControl type="text" value={this.state.username} onChange={this.state.handleChange} autoFocus/>                        
-                    </FormGroup>
-                    <FormGroup controlId="password">
-                        <ControlLabel>Password</ControlLabel>
-                        <FormControl type="password" value={this.state.password} onChange={this.state.handleChange} />
-                    </FormGroup>
-                </form>
-            </div>
+            <Form horizontal>
+                <FormGroup controlId="username">
+                    <Col componentClass={ControlLabel} sm={4}>
+                        Username
+                    </Col>
+                    <Col componentClass={ControlLabel} sm={4}>
+                        <FormControl 
+                            type="text" 
+                            value={this.state.username} 
+                            onChange={this.state.handleChange} 
+                            autoFocus />
+                    </Col>                    
+                </FormGroup>
+                <FormGroup controlId="password">
+                    <Col componentClass={ControlLabel} sm={4}>
+                        Password
+                    </Col>
+                    <Col componentClass={ControlLabel} sm={4}>
+                        <FormControl 
+                            type="password" 
+                            value={this.state.password} 
+                            onChange={this.state.handleChange} />
+                    </Col>                    
+                </FormGroup>
+            </Form>
         );
     }
 }
