@@ -52,7 +52,8 @@ class LoginForm extends React.Component {
                         <FormControl 
                             type="text" 
                             value={this.state.username} 
-                            onChange={this.handleChange} 
+                            onChange={this.handleChange}
+                            placeholder="min 5 chars req"
                             autoFocus />
                     </Col>                    
                 </FormGroup>
@@ -64,6 +65,7 @@ class LoginForm extends React.Component {
                         <FormControl 
                             type="password" 
                             value={this.state.password} 
+                            placeholder="min 5 chars req"
                             onChange={this.handleChange} />
                     </Col>                    
                 </FormGroup>
