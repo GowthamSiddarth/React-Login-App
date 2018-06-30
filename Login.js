@@ -1,10 +1,13 @@
 import React from 'react';
 import { Form, FormGroup, ControlLabel, FormControl, Col } from 'react-bootstrap';
+import "./index.css"
+
+
 class Login extends React.Component {
 
     render() {
         return (
-            <div className="loginForm">
+            <div className="loginForm centered">
                 <LoginForm />
             </div>
         );
