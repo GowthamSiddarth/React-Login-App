@@ -22,14 +22,19 @@ class LoginForm extends React.Component {
             username: "",
             password: ""
         };
+        
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     validateForm() {
         return this.state.username.length > 4 && this.state.password.length > 4
     }
 
-    handleChange() {
-
+    handleChange(e) {
+        var elementId = e.target.id;
+        var elementValue = e.target.value;
+        this.setState({[elementId]: elementValue});
     }
 
     handleSubmit() {
@@ -47,7 +52,7 @@ class LoginForm extends React.Component {
                         <FormControl 
                             type="text" 
                             value={this.state.username} 
-                            onChange={this.state.handleChange} 
+                            onChange={this.handleChange} 
                             autoFocus />
                     </Col>                    
                 </FormGroup>
@@ -59,7 +64,7 @@ class LoginForm extends React.Component {
                         <FormControl 
                             type="password" 
                             value={this.state.password} 
-                            onChange={this.state.handleChange} />
+                            onChange={this.handleChange} />
                     </Col>                    
                 </FormGroup>
                 <FormGroup controlId="submit">
