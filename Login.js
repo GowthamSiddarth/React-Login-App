@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, FormGroup, ControlLabel, FormControl, Col } from 'react-bootstrap';
+import { Form, FormGroup, ControlLabel, FormControl, Col, Button } from 'react-bootstrap';
 import "./index.css"
 
 
@@ -61,6 +61,11 @@ class LoginForm extends React.Component {
                             value={this.state.password} 
                             onChange={this.state.handleChange} />
                     </Col>                    
+                </FormGroup>
+                <FormGroup controlId="submit">
+                    <Col smOffset={4} sm={8}>
+                        <Button type="submit" onSubmit={this.handleSubmit}>Sign In</Button>
+                    </Col>
                 </FormGroup>
             </Form>
         );
