@@ -1,30 +1,30 @@
 import React from 'react';
 
 class Login extends React.Component {
+
     render() {
         return (
             <div>
-                <Form />
             </div>
         );
     }
 }
 
-class Form extends React.Component {
-    render() {
-        return (
-            <form >
-                <label for="username">
-                    Username
-                    <input type="text" id="username" />
-                </label>
-                <label for="password">
-                    Password
-                    <input type="text" id="username" />
-                </label>
-            </form>
-        );
+class LoginForm extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            username: "",
+            password: ""
+        };
     }
+
+    validateForm() {
+        return this.state.username.length > 4 && this.state.password.length > 4
+    }
+
+    
 }
 
 export default Login;
