@@ -40,7 +40,7 @@ class LoginForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         console.log("handleSubmit");
-        fetch("http://192.168.113.192:32323/authenticate", {
+        fetch("http://localhost:32323/authenticate", {
             method: 'post',
             headers: {'Content-Type': 'application/json'},
             body: {
