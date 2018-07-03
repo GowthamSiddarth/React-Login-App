@@ -37,8 +37,17 @@ class LoginForm extends React.Component {
         this.setState({[elementId]: elementValue});
     }
 
-    handleSubmit() {
-
+    handleSubmit(e) {
+        e.preventDefault();
+        console.log("handleSubmit");
+        fetch("http://192.168.113.192:32323/authenticate", {
+            method: 'post',
+            headers: {'Content-Type': 'application/json'},
+            body: {
+                "username": this.state.username,
+                "password": this.state.password
+            }
+        });
     }
 
     render() {
