@@ -40,19 +40,20 @@ class LoginForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         console.log("handleSubmit");
+        console.log(this.state);
         fetch("http://localhost:32323/authenticate", {
             method: 'post',
-            headers: {'Content-Type': 'application/json'},
-            body: {
-                "username": this.state.username,
-                "password": this.state.password
-            }
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(this.state)
         });
     }
 
     render() {
         return (
-            <Form horizontal>
+            <Form horizontal onSubmit={this.handleSubmit}>
                 <FormGroup controlId="username">
                     <Col componentClass={ControlLabel} sm={4}>
                         Username
@@ -83,8 +84,7 @@ class LoginForm extends React.Component {
                         <button 
                             type="submit" 
                             class="btn btn-success"
-                            disabled={!this.validateForm()}
-                            onSubmit={this.handleSubmit}>Sign In</button>
+                            disabled={!this.validateForm()}>Sign In</button>
                     </Col>
                 </FormGroup>
             </Form>
