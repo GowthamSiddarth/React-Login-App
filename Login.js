@@ -53,8 +53,9 @@ class LoginForm extends React.Component {
         }).then(function (res) {
             return res.json();
         }).then(data => {
-            console.log(data);
-            this.setState({ 
+            this.setState({
+                username: '',
+                password: '', 
                 successAlertShowing: data.found,
                 failureAlertShowing: !data.found
             });
@@ -64,7 +65,7 @@ class LoginForm extends React.Component {
     render() {
         return (
             <div id="loginFormAndAlert">
-                <Form horizontal onSubmit={this.handleSubmit}>
+                <Form horizontal onSubmit={this.handleSubmit} id="loginForm">
                     <FormGroup controlId="username">
                         <Col componentClass={ControlLabel} sm={4}>
                             Username
