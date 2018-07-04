@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form, FormGroup, ControlLabel, FormControl, Col, Button } from 'react-bootstrap';
-import "./index.css"
+import "../css/login.css"
 
 
 class Login extends React.Component {
@@ -55,7 +55,7 @@ class LoginForm extends React.Component {
         }).then(data => {
             this.setState({
                 username: '',
-                password: '', 
+                password: '',
                 successAlertShowing: data.found,
                 failureAlertShowing: !data.found
             });
@@ -69,7 +69,7 @@ class LoginForm extends React.Component {
                     <FormGroup controlId="username">
                         <Col componentClass={ControlLabel} sm={4}>
                             Username
-                    </Col>
+                        </Col>
                         <Col componentClass={ControlLabel} sm={8}>
                             <FormControl
                                 type="text"
@@ -82,7 +82,7 @@ class LoginForm extends React.Component {
                     <FormGroup controlId="password">
                         <Col componentClass={ControlLabel} sm={4}>
                             Password
-                    </Col>
+                        </Col>
                         <Col componentClass={ControlLabel} sm={8}>
                             <FormControl
                                 type="password"
