@@ -48,6 +48,12 @@ class LoginForm extends React.Component {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(this.state)
+        })
+        .then(function(res) {
+            return res.json();
+        })
+        .then(function(data) {
+            alert(JSON.stringify(data));
         });
     }
 
