@@ -1,9 +1,9 @@
 var path = require('path');
 
 var config = {
-    entry: './main.js',
+    entry: path.resolve(__dirname) + "\\js\\main.js",
     output: {
-        path: path.resolve(__dirname),
+        path: path.resolve(__dirname) + "\\js",
         filename: 'index.js',
     },
     devServer: {
